@@ -7,7 +7,7 @@ if(isset($_POST['userRole'])) {
 }
 
 if($userRole > 1) {
-    header("Location: http://localhost/quizapp/quizhomepage.php");    
+    header("Location: http://astrid-lindgren.tk/quizapp/quizhomepage.php");    
     exit();
 }
 
@@ -49,7 +49,7 @@ if(isset($_POST['submitQuestion'])) {
     $result = mysqli_query($con, $query);
 
     if($result) {
-        header("Location: http://localhost/quizapp/upload_subject.php");    
+        header("Location: http://astrid-lindgren.tk/quizapp/upload_subject.php");    
         exit();               
     }
     else
@@ -60,7 +60,7 @@ if(isset($_POST['submitQuestion'])) {
 }
 else
 {
-    header("Location: http://localhost/quizapp/quiz.php");    
+    header("Location: http://astrid-lindgren.tk/quizapp/quiz.php");    
     exit(); 
 }
 

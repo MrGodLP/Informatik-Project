@@ -48,19 +48,19 @@ if(isset($_POST['submitEditQuiz'])) {
 
             if(!$result) {
                 $message.= 'Sorry, an error occured while storing your edited questions'; 
-                header("Location: http://localhost/quizapp/quizhomepage.php?message='$message'");
+                header("Location: http://astrid-lindgren.tk/quizapp/quizhomepage.php?message='$message'");
                 exit();                
             }
             
         }
     }
     $message.= 'Questions have been edited successfully'; 
-    header("Location: http://localhost/quizapp/quizhomepage.php?message='$message'");
+    header("Location: http://astrid-lindgren.tk/quizapp/quizhomepage.php?message='$message'");
     exit(); 
 }
 else
 {
-    header("Location: http://localhost/quizapp/login.php");    
+    header("Location: http://astrid-lindgren.tk/quizapp/login.php");    
     exit(); 
 }
 

@@ -70,26 +70,26 @@ if(isset($_POST['submitQuiz'])) {
 
         if($answerInsert = mysqli_query($con, $query)) {
 
-            header("Location: http://localhost/quizapp/check_result.php?subject='$subject'");    
+            header("Location: http://astrid-lindgren.tk/quizapp/check_result.php?subject='$subject'");    
             exit(); 
         }
         else
         {
-            header("Location: http://localhost/quizapp/quizhomepage.php");
+            header("Location: http://astrid-lindgren.tk/quizapp/quizhomepage.php");
             exit(); 
         }
     }
     else
     {
         $message.= 'You have taken this quiz before. You cannot take it again'; 
-        header("Location: http://localhost/quizapp/quizhomepage.php?message='$message'");
+        header("Location: http://astrid-lindgren.tk/quizapp/quizhomepage.php?message='$message'");
         exit(); 
     }    
      
 }
 else
 {
-    header("Location: http://localhost/quizapp/login.php");    
+    header("Location: http://astrid-lindgren.tk/quizapp/login.php");    
     exit(); 
 }
 

@@ -31,17 +31,17 @@ if(isset($_POST['loginButton'])) {
         
         if(strlen($firstname) < 2 || strlen($lastname) < 2) {
            $message.= 'Your name cannot be 1 Letter'; 
-           header("Location: http://localhost/quizapp/login.php?message='$message'");    
+           header("Location: http://astrid-lindgren.tk/quizapp/login.php?message='$message'");    
            exit();                       
         }
         if($password !== $confirmPassword) {
             $message.= 'Your Passwords do not match'; 
-            header("Location: http://localhost/quizapp/login.php?message='$message'");    
+            header("Location: http://astrid-lindgren.tk/quizapp/login.php?message='$message'");    
             exit();           
         }
         if(strlen($password) > 30 || strlen($password) < 5) {
             $message.= 'Your Passwords must be between 5 and 30 characters long';
-            header("Location: http://localhost/quizapp/login.php?message='$message'");    
+            header("Location: http://astrid-lindgren.tk/quizapp/login.php?message='$message'");    
             exit();            
         }
         
@@ -59,14 +59,14 @@ if(isset($_POST['loginButton'])) {
         
         if(mysqli_num_rows($result) > 0) {
             $message.= 'This email is already in use.'; 
-            header("Location: http://localhost/quizapp/login.php?message='$message'");    
+            header("Location: http://astrid-lindgren.tk/quizapp/login.php?message='$message'");    
             exit();           
         }
         else
         {
             if(preg_match('/[^A-Za-z0-9&$+]/', $password)) {
                 $message.= "Your password can only contain English characters, numbers, $, &, +";  
-                header("Location: http://localhost/quizapp/login.php?message='$message'");    
+                header("Location: http://astrid-lindgren.tk/quizapp/login.php?message='$message'");    
                 exit();              
             }
             $password = md5($password);
@@ -112,13 +112,13 @@ if(isset($_POST['loginButton'])) {
             if($insertUser = mysqli_query($con, $query)) {
                 $_SESSION['email'] = $email;
             
-                header("Location: http://localhost/quizapp/quizhomepage.php");    
+                header("Location: http://astrid-lindgren.tk/quizapp/quizhomepage.php");    
                 exit();            
             }
             else
             {
                 $message.= 'Your sign up was not successful. Please try again later';
-                header("Location: http://localhost/quizapp/login.php?message='$message'");    
+                header("Location: http://astrid-lindgren.tk/quizapp/login.php?message='$message'");    
                 exit();
             }
 
@@ -136,7 +136,7 @@ if(isset($_POST['loginButton'])) {
 
         if(mysqli_num_rows($result) < 1) {
             $message.= 'This email is not registered.';  
-            header("Location: http://localhost/quizapp/login.php?message='$message'");    
+            header("Location: http://astrid-lindgren.tk/quizapp/login.php?message='$message'");    
             exit();          
         }
         else
@@ -150,13 +150,13 @@ if(isset($_POST['loginButton'])) {
             if(md5($password) === $hashedPassword) {
                 $_SESSION['email'] = $email;
             
-                header("Location: http://localhost/quizapp/quizhomepage.php");    
+                header("Location: http://astrid-lindgren.tk/quizapp/quizhomepage.php");    
                 exit();
             }
             else
             {
                 $message.= 'The email/password combination is incorrect.'; 
-                header("Location: http://localhost/quizapp/login.php?message='$message'");    
+                header("Location: http://astrid-lindgren.tk/quizapp/login.php?message='$message'");    
                 exit();  
             }
                           
@@ -166,7 +166,7 @@ if(isset($_POST['loginButton'])) {
 }
 else
 {
-    header("Location: http://localhost/quizapp/login.php");    
+    header("Location: http://astrid-lindgren.tk/quizapp/login.php");    
     exit(); 
 }
 
