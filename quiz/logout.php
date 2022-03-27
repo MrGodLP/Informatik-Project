@@ -1,7 +1,9 @@
-<?php 
+<?php
+include("includes/header.php");
+
 session_start();
-if(isset($_SESSION['email'])){
-session_destroy();}
-$ref= @$_GET['q'];
-header("location:$ref");
-?>
+session_destroy();
+header("Location: login.php");
+
+?>    
+    

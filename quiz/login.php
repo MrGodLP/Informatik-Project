@@ -1,96 +1,96 @@
 <?php
-	require('database.php');
-	session_start();
-	if(isset($_SESSION["email"]))
-	{
-		session_destroy();
-	}
-	
-	$ref=@$_GET['q'];		
-	if(isset($_POST['submit']))
-	{	
-		$email = $_POST['email'];
-		$pass = $_POST['password'];
-		$email = stripslashes($email);
-		$email = addslashes($email);
-		$pass = stripslashes($pass); 
-		$pass = addslashes($pass);
-		$email = mysqli_real_escape_string($con,$email);
-		$pass = mysqli_real_escape_string($con,$pass);					
-		$str = "SELECT * FROM user WHERE email='$email' and password='$pass'";
-		$result = mysqli_query($con,$str);
-		if((mysqli_num_rows($result))!=1) 
-		{
-			echo "<center><h3><script>alert('Sorry.. Wrong Username (or) Password');</script></h3></center>";
-			header("refresh:0;url=login.php");
-		}
-		else
-		{
-			$_SESSION['logged']=$email;
-			$row=mysqli_fetch_array($result);
-			$_SESSION['name']=$row[1];
-			$_SESSION['id']=$row[0];
-			$_SESSION['email']=$row[2];
-			$_SESSION['password']=$row[3];
-			header('location: welcome.php?q=1'); 					
-		}
-	}
+session_start();
+require 'includes/connection.php';
+
+if(isset($_GET['message'])) {
+    $message = $_GET['message'];
+}
+
 ?>
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Login | Online Quiz System</title>
-		<link rel="stylesheet" href="scripts/bootstrap/bootstrap.min.css">
-		<link rel="stylesheet" href="scripts/ionicons/css/ionicons.min.css">
-		<link rel="stylesheet" href="css/form.css">
-        <style type="text/css">
-            body{
-                  width: 100%;
-                  background: url(image/book.png) ;
-                  background-position: center center;
-                  background-repeat: no-repeat;
-                  background-attachment: fixed;
-                  background-size: cover;
-                }
-          </style>
-	</head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<body>
-		<section class="login first grey">
-			<div class="container">
-				<div class="box-wrapper">				
-					<div class="box box-border">
-						<div class="box-body">
-						<center> <h5 style="font-family: Noto Sans;">Login to </h5><h4 style="font-family: Noto Sans;">Online Quiz System</h4></center><br>
-							<form method="post" action="login.php" enctype="multipart/form-data">
-								<div class="form-group">
-									<label>Enter Your Email Id:</label>
-									<input type="email" name="email" class="form-control">
-								</div>
-								<div class="form-group">
-									<label class="fw">Enter Your Password:
-										<a href="javascript:void(0)" class="pull-right">Forgot Password?</a>
-									</label>
-									<input type="password" name="password" class="form-control">
-								</div> 
-								<div class="form-group text-right">
-									<button class="btn btn-primary btn-block" name="submit">Login</button>
-								</div>
-								<div class="form-group text-center">
-									<span class="text-muted">Don't have an account?</span> <a href="register.php">Register</a> Here..
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <script src="assets/src/js/script.js"></script>
+    <title>The Quiz App</title>
+  </head>
+  <body background="assets/src/images/background.jpg">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand" href="#">The Quiz</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>                  
+        </ul>
+        <span class="navbar-text">
+            Logged out
+        </span>        
+    </div>
+    </nav>
 
-		<script src="js/jquery.js"></script>
-		<script src="scripts/bootstrap/bootstrap.min.js"></script>
-	</body>
+    <div class="container" style="margin-top: 20px;">
+        <div style="text-align: center; font-weight: bold;">
+            <p><?php if(isset($message)) {echo $message;} ?></p>
+        </div>
+        <form id="loginForm" action="handlers/login_handler.php" method="POST" name="loginForm">
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group row" id="confirmPasswordDiv" style="display: none;">
+                <label for="inputPassword4" class="col-sm-2 col-form-label">Confirm Password</label>
+                <div class="col-sm-10">
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+                </div>
+            </div>
+            <div class="form-group row" id="firstnameDiv" style="display: none;">
+                <label for="firstnamelabel" class="col-sm-2 col-form-label">First Name</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
+                </div>
+            </div>
+            <div class="form-group row" id="lastnameDiv" style="display: none;">
+                <label for="lastnamelabel" class="col-sm-2 col-form-label">Last Name</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
+                </div>
+            </div>        
+            <div class="form-group row">
+                <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary" id="loginButton" name="loginButton" value="0">Log In</button>                
+                </div>
+            </div>
+            <div class="form-group row" onclick="toggleSignup();">
+                <div class="col-sm-10">
+                    <p id="toggleMessage"><a href="#" id="toggleMessageTag" style="text-align: center; font-size: 1.2rem; color: black;"><b>If you don't already have an account, click here to sign up<b></a></p>      
+                </div>
+            </div>           
+        </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
+
