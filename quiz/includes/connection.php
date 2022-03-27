@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect("localhost","root","", "quizapp");
+$con = mysqli_connect("localhost","quiz","MrGodLP07#", "quiz");
 
 // Check connection
 if (!$con) {
