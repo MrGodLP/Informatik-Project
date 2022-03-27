@@ -7,7 +7,7 @@ if(isset($_POST['userRole'])) {
 }
 
 if($userRole > 1) {
-    header("Location: http://localhost/quizapp/quizhomepage.php");    
+    header("Location: http://astrid-lindgren.tk/quizapp/quizhomepage.php");    
     exit();
 }
 
@@ -27,20 +27,20 @@ if(isset($_POST['submitDeleteSubject'])) {
 
     if($result) {
         $message.= 'The selected subjects have been deleted successfully'; 
-        header("Location: http://localhost/quizapp/delete_subject.php?message='$message'");    
+        header("Location: http://astrid-lindgren.tk/quizapp/delete_subject.php?message='$message'");    
         exit();               
     }
     else
     {
         $message.= 'Delete error. The selected subjects have not been deleted successfully'; 
-        header("Location: http://localhost/quizapp/delete_subject.php?message='$message'");    
+        header("Location: http://astrid-lindgren.tk/quizapp/delete_subject.php?message='$message'");    
         exit();   
     } 
      
 }
 else
 {
-    header("Location: http://localhost/quizapp/quiz.php");    
+    header("Location: http://astrid-lindgren.tk/quizapp/quiz.php");    
     exit(); 
 }
 

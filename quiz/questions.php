@@ -6,7 +6,7 @@ if(isset($_POST['subject'])) {
 }
 else
 {
-    header("Location: http://localhost/quizapp/quizhomepage.php");    
+    header("Location: http://astrid-lindgren.tk/quizapp/quizhomepage.php");    
     exit();
 }
 
@@ -22,7 +22,7 @@ $check = mysqli_num_rows($userCheck);
 $message = '';
 if($check > 0){
     $message.= 'You cannot take the quiz on a subject more than once per quiz session.';
-    header("Location: http://localhost/quizapp/quizhomepage.php?message='$message'");    
+    header("Location: http://astrid-lindgren.tk/quizapp/quizhomepage.php?message='$message'");    
     exit();
 }
 
@@ -58,7 +58,7 @@ $result = mysqli_query($con, $query);
                         if($row['question_image'] != '') { ?>
                             <label for="question" class="col-sm-2 col-form-label">Question Image</label>
                             <p><div class="col-sm-10">
-                                <img src="http://localhost<?php echo $row['question_image']; ?>" class="img-responsive" style="max-height: 400px;"/>
+                                <img src="http://astrid-lindgren.tk<?php echo $row['question_image']; ?>" class="img-responsive" style="max-height: 400px;"/>
                             </div></p>
                         <?php
                         }

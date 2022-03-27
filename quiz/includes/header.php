@@ -18,7 +18,7 @@ if(isset($_SESSION['email'])) {
     }
 }
 else {
-    header("Location: http://localhost/quizapp/login.php");
+    header("Location: http://astrid-lindgren.tk/quizapp/login.php");
 }
 
 ?>
@@ -46,20 +46,20 @@ else {
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="http://localhost/quizapp/quizhomepage.php">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="http://astrid-lindgren.tk/quizapp/quizhomepage.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="http://localhost/quizapp/check_result.php">Check Results</a>
+                <a class="nav-link" href="http://astrid-lindgren.tk/quizapp/check_result.php">Check Results</a>
             </li> 
             <?php 
                 if($userRole < 2) { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/quizapp/upload_subject.php">Add Questions</a>
+                        <a class="nav-link" href="http://astrid-lindgren.tk/quizapp/upload_subject.php">Add Questions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/quizapp/delete_subject.php">Delete Questions</a>
+                        <a class="nav-link" href="http://astrid-lindgren.tk/quizapp/delete_subject.php">Delete Questions</a>
                     </li><li class="nav-item">
-                        <a class="nav-link" href="http://localhost/quizapp/edit_subject.php">Edit Questions</a>
+                        <a class="nav-link" href="http://astrid-lindgren.tk/quizapp/edit_subject.php">Edit Questions</a>
                     </li> <?php  
                 }
             ?>                  
