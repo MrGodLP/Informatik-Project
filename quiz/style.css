@@ -8,12 +8,12 @@
 }
 
 body{
-    background: #007bff;
+    background: gray;
 }
 
 ::selection{
     color: #fff;
-    background: #007bff;
+    background: gray;
 }
 
 .start_btn,
