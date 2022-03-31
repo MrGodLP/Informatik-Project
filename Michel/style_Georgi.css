@@ -1,4 +1,12 @@
 .bücher{
     margin-left: 3%;
     margin-top: 6%;
+    text-align: center;
+}
+
+h1{
+    font-size: larger;
+}
+h2{
+    font-size: medium;
 }
