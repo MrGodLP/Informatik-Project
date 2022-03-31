@@ -4,7 +4,6 @@
 
     margin-left: 25%;
     margin-right: 25%;
-    list-style: none
 }
 
 h1{
@@ -17,3 +16,7 @@ h2{
     margin-top: 8px;
     margin-bottom: 15px;
 }
+
+ul {
+    list-style-type: none;
+  }
