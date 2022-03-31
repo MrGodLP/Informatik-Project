@@ -1,18 +1,4 @@
 
-h1{
-    font-size: xx-large;
-    margin-top: 15px;
-    text-align: center;
-}
-h2{
-    font-size: x-large;
-    margin-top: 38px;
-    margin-bottom: 15px;
-}
-
-ul {
-    list-style-type: none;
-  }
 
   $grid-float-breakpoint: 768px;
 
