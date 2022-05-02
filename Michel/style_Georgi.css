@@ -17,6 +17,10 @@ h2{
 margin-top: 20px;;
 }
 
-figure {
-    width: 33%;
+.figure1 {
+    width: 100%;
   }
+
+.figure2 {
+    width: 33%;
+}
