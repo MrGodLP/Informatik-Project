@@ -25,7 +25,7 @@ margin-top: 20px;;
     width: 33%;
 }
 
-p {
-margin-left: 15%;
-margin-right: 15%;
+section.allgemein {
+    margin-left: 15%;
+    margin-right: 15%;
 }
