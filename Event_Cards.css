@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #5865F2;
+    background-color: #23272A;
 }
 
 .container {
@@ -91,7 +91,7 @@ body {
 .separator {
     width: 20%;
     height: 6px;
-    background-color: #17537a;
+    background-color: #23272A;
     margin-bottom: 16px;
 }
 
