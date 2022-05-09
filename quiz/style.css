@@ -11,6 +11,10 @@ body{
     background-color: #5865F2;
 }
 
+body {
+    background-color: #23272A !important;
+}
+
 ::selection{
     color: #fff;
     background: #5865F2;
