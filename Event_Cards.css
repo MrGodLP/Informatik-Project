@@ -145,3 +145,11 @@ body {
 .action:hover {
     background-color: #23272A;
 }
+
+h1{
+    color: white;
+  }
+
+p{
+    color: white;
+  }
