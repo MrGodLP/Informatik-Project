@@ -17,9 +17,11 @@ h2{
 img {
     max-width: 150%;
     max-height: 150%;
+    margin: middle;
 }
 
 .img {
     height: 200px;
     width: 200px;
+    margin: middle;
 }
