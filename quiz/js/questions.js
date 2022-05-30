@@ -1,29 +1,29 @@
 // creating an array and passing the number, questions, options, and answers
 let questions = [
     {
+    numb: 4,
+    question: "Test",
+    answer: "Test2",
+    options: [
+      "Test1",
+      "Test2",
+      "Test3",
+      "Test4"
+    ]
+  },
+    {
+    numb: 5,
+    question: "Test",
+    answer: "Test3",
+    options: [
+      "Test1",
+      "Test2",
+      "Test3",
+      "Test4"
+    ]
+  },
+    {
     numb: 1,
-    question: "What does HTML stand for?",
-    answer: "Hyper Text Markup Language",
-    options: [
-      "Hyper Text Preprocessor",
-      "Hyper Text Markup Language",
-      "Hyper Text Multiple Language",
-      "Hyper Tool Multi Language"
-    ]
-  },
-    {
-    numb: 2,
-    question: "What does CSS stand for?",
-    answer: "Cascading Style Sheet",
-    options: [
-      "Common Style Sheet",
-      "Colorful Style Sheet",
-      "Computer Style Sheet",
-      "Cascading Style Sheet"
-    ]
-  },
-    {
-    numb: 3,
     question: "Welches Pippi-Langstrumpf-Buch/Film gibt es nicht?",
     answer: "Pippi bringt die Welt in Ordnung",
     options: [
@@ -34,22 +34,22 @@ let questions = [
     ]
   },
     {
-    numb: 4,
+    numb: 2,
     question: "Wie heißen Pippis Tiere?",
-    answer: "Structured Query Language",
+    answer: "Kleiner Onkel und Herr Nilsson",
     options: [
-      "Stylish Question Language",
-      "Stylesheet Query Language",
-      "Statement Question Language",
-      "Structured Query Language"
+      "Herr Nilsson",
+      "Kleiner Onkel",
+      "Kleiner Onkel und Herr Nilsson",
+      "Herbert und Gerdrude"
     ]
   },
     {
-    numb: 5,
-    question: "What does XML stand for?",
-    answer: "eXtensible Markup Language",
+    numb: 3,
+    question: "Aus welchem Land kommt Astrid Lindgren?",
+    answer: "Schweden",
     options: [
-      "eXtensible Markup Language",
+      "Deutschland",
       "eXecutable Multiple Language",
       "eXTra Multi-Program Language",
       "eXamine Multiple Language"
