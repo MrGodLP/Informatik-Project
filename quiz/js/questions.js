@@ -2,24 +2,24 @@
 let questions = [
     {
     numb: 1,
-    question: "Test",
-    answer: "Test2",
+    question: "Wann wurde das erste Buch veröffentlicht?",
+    answer: "1963",
     options: [
-      "Test1",
-      "Test2",
-      "Test3",
-      "Test4"
+      "1940",
+      "1963",
+      "1980",
+      "1950"
     ]
   },
     {
     numb: 2,
-    question: "Test",
-    answer: "Test3",
+    question: "Wie heißt Michel eigentlich im Orginalen (schwedisch)",
+    answer: "Emil",
     options: [
-      "Test1",
-      "Test2",
-      "Test3",
-      "Test4"
+      "Michel",
+      "Emil",
+      "Michael",
+      "Elias"
     ]
   },
     {
