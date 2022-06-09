@@ -1,4 +1,3 @@
 <?php
-$output = exec("test.sh");
-echo $output;
+exec("test.sh");
 ?>
